@@ -3,12 +3,30 @@ using UnityEngine;
 public class enimy : MonoBehaviour
 {
     public float speed = 10f;
+    public int health = 100;
+    public int value = 50;
+    public GameObject deathEffect;
     private Transform target;
     private int wavepointIndex = 0;
 
     private void Start()
     {
         target = waypoints.points[0]; 
+    }
+    public void takeDamage(int amount)
+    {
+        health -= amount;
+        if (health <= 0)
+        {
+            Die();
+        }
+    }
+    void Die()
+    {
+        PlayerStats.Money += value;
+        GameObject effect =(GameObject) Instantiate(deathEffect, transform.position, Quaternion.identity);
+        Destroy(effect,5f);
+        Destroy(gameObject);
     }
     private void Update()
     {
@@ -24,10 +42,15 @@ public class enimy : MonoBehaviour
     {
         if (wavepointIndex >= waypoints.points.Length - 1)
         {
-            Destroy(gameObject);
+            EndPath();
             return;
         }
         wavepointIndex++;
         target = waypoints.points[wavepointIndex];
+    }
+    void EndPath()
+    {
+        PlayerStats.lives--;
+        Destroy(gameObject);
     }
 }
