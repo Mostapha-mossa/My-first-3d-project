@@ -70,6 +70,7 @@
     <Compile Include="Assets\scripts\GameManager.cs" />
     <Compile Include="Assets\scripts\waypoints.cs" />
     <Compile Include="Assets\scripts\shop.cs" />
+    <Compile Include="Assets\scripts\EnemyMovement.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Fonts\LICENSE.txt" />
