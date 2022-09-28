@@ -9,9 +9,11 @@ public class PlayerStats : MonoBehaviour
 
     public static int lives;
     public int startLives = 20;
+    public static int Rounds;
     private void Start()
     {
         Money = startMoney;
         lives = startLives;
+        Rounds = 0;
     }
 }

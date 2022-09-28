@@ -25,13 +25,15 @@ public class Node : MonoBehaviour
         {
             return;
         }
-        if (!buildManger.CanBuild)
-        {
-            return;
-        }
+        
         if (turret != null)
         {
-            Debug.Log("can't build there -TOOO:Display on screen.");
+            buildManger.selectNode(this);
+            return;
+        }
+
+        if (!buildManger.CanBuild)
+        {
             return;
         }
         //build a turret

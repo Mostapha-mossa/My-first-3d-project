@@ -18,6 +18,8 @@ public class BuildManager : MonoBehaviour
     public GameObject buildEffact;
 
     private TurretBluePrint turretToBuild;
+    private Node selectedNode;
+    public NodeUI nodeUI;
 
     public bool CanBuild { get { return turretToBuild != null; } }
     public bool HasMoney { get { return PlayerStats.Money >= turretToBuild.cost; } }
@@ -40,8 +42,28 @@ public class BuildManager : MonoBehaviour
 
         Debug.Log("Turret build! Money left:" + PlayerStats.Money);
     }
+
+    public void selectNode(Node node)
+    {
+        if (selectedNode == node)
+        {
+            DeslectNode();
+            return;
+        }
+        selectedNode = node;
+        turretToBuild = null;
+
+        nodeUI.setTarget(node);
+    }
+    public void DeslectNode()
+    {
+        selectedNode = null;
+        nodeUI.Hide();
+    }
+
     public void SelectTurretToBuild(TurretBluePrint turret)
     {
         turretToBuild = turret;
+        DeslectNode();
     }
 }
