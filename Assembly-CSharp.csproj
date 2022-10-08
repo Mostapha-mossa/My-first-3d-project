@@ -65,14 +65,21 @@
     <Compile Include="Assets\scripts\enimy.cs" />
     <Compile Include="Assets\scripts\PlayerStats.cs" />
     <Compile Include="Assets\scripts\LviesUI.cs" />
+    <Compile Include="Assets\scripts\LevelSelecter.cs" />
     <Compile Include="Assets\scripts\GameOver.cs" />
     <Compile Include="Assets\scripts\Node.cs" />
     <Compile Include="Assets\scripts\MoneyUI.cs" />
+    <Compile Include="Assets\scripts\Wave.cs" />
     <Compile Include="Assets\scripts\Turret.cs" />
+    <Compile Include="Assets\scripts\SceneFater.cs" />
     <Compile Include="Assets\scripts\GameManager.cs" />
     <Compile Include="Assets\scripts\waypoints.cs" />
     <Compile Include="Assets\scripts\shop.cs" />
+    <Compile Include="Assets\scripts\MainMenu.cs" />
     <Compile Include="Assets\scripts\EnemyMovement.cs" />
+    <Compile Include="Assets\scripts\pauseMenu.cs" />
+    <Compile Include="Assets\scripts\RoundsSurvived.cs" />
+    <Compile Include="Assets\scripts\completeLevel.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Fonts\LICENSE.txt" />
